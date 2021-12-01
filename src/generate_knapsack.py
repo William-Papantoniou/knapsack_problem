@@ -1,6 +1,6 @@
 import random
 
-def generate(min_noi, max_noi):
+def generate_knapsack(min_noi, max_noi):
 
     if min_noi > max_noi:
         raise ValueError("min number of items needs to be smaller than max number of items")
@@ -15,4 +15,4 @@ def generate(min_noi, max_noi):
         return_dict["item_"+str(counter)] = {"weight": random.randint(1,50), "value": random.randint(1,2000), "hardness": random.random(), "ease_of_sale": random.random()}
         counter += 1
 
-    return(return_dict)
+    return{"item_number": noi ,"return_dict": return_dict}
