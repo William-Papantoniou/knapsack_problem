@@ -12,7 +12,7 @@ def generate_initial_pop(number_of_items, pop_size):
             member_list.append(random.randint(0,1))
             counter += 1
         
-        inital_pop["member"+str(i+1)] = {"values": member_list, "fitness": 0}
+        inital_pop["member_"+str(i+1)] = {"values": member_list, "fitness": 0}
 
         member_list = []
         counter = 0
