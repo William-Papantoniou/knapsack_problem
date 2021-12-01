@@ -15,4 +15,4 @@ def generate_knapsack(min_noi, max_noi):
         return_dict["item_"+str(counter)] = {"weight": random.randint(1,50), "value": random.randint(1,2000), "hardness": random.random(), "ease_of_sale": random.random()}
         counter += 1
 
-    return{"item_number": noi ,"return_dict": return_dict}
+    return{"item_number": noi ,"items": return_dict}
