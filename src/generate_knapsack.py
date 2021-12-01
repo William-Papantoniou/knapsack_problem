@@ -1,5 +1,4 @@
 import random
-# return_dict = {"knapsack": some_max_weight int(1-100), "item_1": {"weight": int(1-100), "value": int(1-2000), "hardness": float(0-1), "ease_of_sale": float(0-1)}}
 
 def generate(min_noi, max_noi):
 
@@ -17,6 +16,3 @@ def generate(min_noi, max_noi):
         counter += 1
 
     return(return_dict)
-
-if __name__ == "__main__":
-    print(generate(1,5))
