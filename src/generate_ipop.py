@@ -1,17 +1,14 @@
-from generate_knapsack import generate_knapsack
 import random
 
 #{"memberX": {"values": [1,1,1,1,1], "fitness": int()}}
 
-def generate_initial_pop(min_item, max_item, pop_size):
-    returned_value = generate_knapsack(min_item,max_item)
-    number_of_items = returned_value["item_number"]
+def generate_initial_pop(number_of_items, pop_size):
     counter = 0
     inital_pop = {}
     member_list = []
 
     for i in range(pop_size):
-        while counter <= number_of_items:
+        while counter < number_of_items:
             member_list.append(random.randint(0,1))
             counter += 1
         
@@ -20,8 +17,8 @@ def generate_initial_pop(min_item, max_item, pop_size):
         member_list = []
         counter = 0
     
-    return{"population": inital_pop, "items": returned_value["items"]}
+    return{"population": inital_pop}
 
 if __name__ == "__main__":
-    print(generate_initial_pop(1,5,5))
+    print(generate_initial_pop(6,5))
     
