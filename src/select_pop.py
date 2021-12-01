@@ -2,8 +2,8 @@ import random
 def select_pop(population_and_fitness):
     parent_pop = {}
     counter = 1
-    
-    while len(parent_pop) != len(population_and_fitness)/2:
+
+    while len(parent_pop) != int(len(population_and_fitness)/2):
         first_fighter = random.randint(1, len(population_and_fitness))
         second_fighter = random.randint(1, len(population_and_fitness))
         
