@@ -6,9 +6,6 @@ from generate_knapsack import generate_knapsack
 from select_pop import select_pop
 from crossover_mutation import crossover_mutation
 
-csvfile = open("output.csv", "w")
-writer = csv.writer(csvfile)
-
 
 #Generate inital pop Start
 minimum_number_of_items = int(input("Please enter the minimum number of items "))
@@ -31,6 +28,7 @@ fitness_retrun_value = fitness(inital_pop_return_value["population"], knapsack_r
 generation_counter = 0
 
 best_performing_gnome = []
+top_performer = {"value": [], "fitness": 0}
 
 while generation_counter < no_generations:
     parent_pop = select_pop(fitness_retrun_value)
@@ -40,21 +38,21 @@ while generation_counter < no_generations:
     fitness_retrun_value = fitness(crossover_mutated_pop, knapsack_return_value["items"], knapsack_return_value["knapsack"])
 
     max_fit = 0
-    top_performer = {}
 
     for item in fitness_retrun_value:
-        if fitness_retrun_value[item]["fitness"] > max_fit:
+        if fitness_retrun_value[item]["fitness"] >= max_fit:
             max_fit = fitness_retrun_value[item]["fitness"]
-            top_performer[item] = fitness_retrun_value[item]
-    
-    
-    writer.writerow(str(generation_counter)+str(top_performer))
-    best_performing_gnome.append(top_performer)
+            best_performing_gnome.append(fitness_retrun_value[item])
+            
+            if fitness_retrun_value[item]["fitness"] > top_performer["fitness"]:
+                top_performer = fitness_retrun_value[item]
+
 
 
     generation_counter += 1
 
 print(best_performing_gnome)
+print("\n\n\n")
+print(top_performer)
 
-csvfile.close()
 #Itteration of generations end
