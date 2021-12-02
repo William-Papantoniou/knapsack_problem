@@ -1,8 +1,14 @@
+import csv
+
 from generate_ipop import generate_initial_pop
 from generate_fitness import fitness
 from generate_knapsack import generate_knapsack
 from select_pop import select_pop
 from crossover_mutation import crossover_mutation
+
+csvfile = open("output.csv", "w")
+writer = csv.writer(csvfile)
+
 
 #Generate inital pop Start
 minimum_number_of_items = int(input("Please enter the minimum number of items "))
@@ -41,10 +47,13 @@ while generation_counter < no_generations:
             max_fit = fitness_retrun_value[item]["fitness"]
             top_performer[item] = fitness_retrun_value[item]
     
+    
+    writer.writerow(str(generation_counter)+str(top_performer))
     best_performing_gnome.append(top_performer)
 
 
     generation_counter += 1
 
 print(best_performing_gnome)
+csvfile.close()
 #Itteration of generations end

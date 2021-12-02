@@ -8,7 +8,7 @@ def crossover_mutation(parents, pop_size, noi):
         second = random.randint(1,len(parents))
         if noi % 2 == 0 and first != second:
             slice_amount = int(noi/2)
-            crossover_mutated_dict["member_"+str(counter)]["value"] = {"values": parents["member_"+str(first)]["values"][:(slice_amount)] + parents["member_"+str(second)]["values"][-(slice_amount):], "fitness": 0}
+            crossover_mutated_dict["member_"+str(counter)] = {"values": parents["member_"+str(first)]["values"][:(slice_amount)] + parents["member_"+str(second)]["values"][-(slice_amount):], "fitness": 0}
             counter += 1
         
         elif noi % 2 != 0 and first != second:
