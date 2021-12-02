@@ -55,5 +55,6 @@ while generation_counter < no_generations:
     generation_counter += 1
 
 print(best_performing_gnome)
+
 csvfile.close()
 #Itteration of generations end
