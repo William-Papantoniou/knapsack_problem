@@ -1,3 +1,6 @@
+# About Me
+Hi Everyone I am William Papantoniou a first year Engineering(Hons)/CS Student at UNSW, I thought it would be cool to make a Genetic Algorithm for the knapsack problem, and this is what I came up with. From my personal testing it seems to be very effective :). My email is wpapantoniou.biz@gmail.com if you would like to get in contact about the code. 
+
 # knapsack_problem
 A more advanced knapsack problem which considers not only weight and value, but also strength of the item (Items chance to break) and the ease of sale (How difficult an item is to sell) of the item
 
