@@ -9,7 +9,7 @@ An individual member consists of a dictionay of two items, "values" and "fitness
 The knapsack can simply be imagined as a bag which has a maximum carrying capacity, the generate_knapsack.py file generates this bag along with *n* number of items as specified by the user when running the body_code.py file, the number of items generated is a random number within a range unless both the lower bound and upper bound are the same.
 
 # Description of each file
-body_code.py: is the main body of code, it calls all other files (Except the csv file which has yet to have its functionality added). If you want to run this code just run the code in this file after getting the code
+body_code.py: is the main body of code, it calls all other files (Except the csv file which has yet to have its functionality added). If you want to run this code just run the code in this file after getting the code. Output values for this function are, best performing member of each population, best performing member overall, and Average fitness of each population.
 
 crossover_mutation.py: is the code that defines the crossover_mutation function, which takes the parent population, and randomly takes members inorder to splice their genome. At which point each value within evey members genome will have a 5% chance to be selected to flip bits, from a 0 to a 1 or visea versa.
 
