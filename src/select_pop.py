@@ -18,7 +18,6 @@ def select_pop(population_and_fitness):
         first_fighter = random.randint(1, len(population_and_fitness))
         second_fighter = random.randint(1, len(population_and_fitness))
         
-        # Need to find a better solution to having two ppl who equal 0 just select the first one
         if population_and_fitness["member_"+str(first_fighter)]["fitness"] >= population_and_fitness["member_"+str(second_fighter)]["fitness"]:
             parent_pop["member_"+str(counter)] = population_and_fitness["member_"+str(first_fighter)]
             counter += 1
