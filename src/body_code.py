@@ -1,5 +1,3 @@
-import csv
-
 from generate_ipop import generate_initial_pop
 from generate_fitness import fitness
 from generate_knapsack import generate_knapsack
@@ -30,6 +28,8 @@ generation_counter = 0
 
 best_performing_gnome = []
 top_performer = {"value": [], "fitness": 0}
+avg_fitness_value = 0
+avg_fitness_dict = {}
 
 while generation_counter < no_generations:
     parent_pop = select_pop(fitness_retrun_value)
@@ -41,6 +41,7 @@ while generation_counter < no_generations:
     max_fit = 0
 
     for item in fitness_retrun_value:
+        avg_fitness_value += fitness_retrun_value[item]["fitness"]
         if fitness_retrun_value[item]["fitness"] >= max_fit:
             max_fit = fitness_retrun_value[item]["fitness"]
             best_performing_gnome.append(fitness_retrun_value[item])
@@ -49,11 +50,15 @@ while generation_counter < no_generations:
                 top_performer = fitness_retrun_value[item]
 
 
-
+    avg_fitness_value = avg_fitness_value/population_size
+    avg_fitness_dict["generation_"+str(generation_counter)] = {"average_fitness": avg_fitness_value}
+    avg_fitness_value = 0
     generation_counter += 1
 
 print(best_performing_gnome)
 print("\n\n\n")
 print(top_performer)
+print("\n\n\n")
+print(avg_fitness_dict)
 
 #Itteration of generations end
