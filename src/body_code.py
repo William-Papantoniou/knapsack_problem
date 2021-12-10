@@ -16,6 +16,7 @@ no_generations = int(input("Please enter how many generations you would like to 
 if population_size % 2 != 0:
     population_size += 1
 
+
 knapsack_return_value = generate_knapsack(minimum_number_of_items, maximum_number_of_items)
 
 inital_pop_return_value = generate_initial_pop(knapsack_return_value["item_number"], population_size)

@@ -6,7 +6,11 @@ def generate_knapsack(min_noi, max_noi):
         raise ValueError("min number of items needs to be smaller than max number of items")
 
     knapsack = random.randint(1,100)
-    noi = random.randint(min_noi,max_noi)
+    if min_noi == max_noi:
+        noi = max_noi
+
+    else:
+        noi = random.randint(min_noi,max_noi)
     counter = 1
 
     return_dict = {}
